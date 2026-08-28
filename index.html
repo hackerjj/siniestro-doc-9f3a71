@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Declaración de Siniestro — Rotura de Tubería</title>
+<style>
+  :root{
+    --rojo:#c8102e; --tinta:#1a1a1a; --gris:#6b7280; --linea:#e5e7eb;
+    --bg:#f5f6f8; --card:#ffffff; --ok:#0f7b3f; --okbg:#e8f6ee;
+    --warnbg:#fff6e6; --warn:#8a5a00;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    color:var(--tinta);background:var(--bg);line-height:1.5;-webkit-font-smoothing:antialiased;}
+  .wrap{max-width:820px;margin:0 auto;padding:24px 20px 60px;}
+  .ico{display:inline-block;width:1em;height:1em;vertical-align:-0.125em;margin-right:4px;}
+  header{background:var(--card);border:1px solid var(--linea);border-radius:14px;padding:22px 24px;margin-bottom:18px;}
+  .brand{display:flex;align-items:center;gap:10px;color:var(--rojo);font-weight:700;font-size:14px;letter-spacing:.3px;text-transform:uppercase;}
+  h1{font-size:22px;margin:10px 0 4px;}
+  .sub{color:var(--gris);font-size:14px;margin:0;}
+  .card{background:var(--card);border:1px solid var(--linea);border-radius:14px;padding:20px 22px;margin-bottom:16px;}
+  .card h2{font-size:15px;text-transform:uppercase;letter-spacing:.4px;color:var(--rojo);margin:0 0 14px;
+    display:flex;align-items:center;border-bottom:2px solid var(--linea);padding-bottom:8px;}
+  table{width:100%;border-collapse:collapse;font-size:14px;}
+  td{padding:7px 8px;vertical-align:top;border-bottom:1px solid var(--linea);}
+  td.k{width:38%;color:var(--gris);font-weight:600;}
+  td.v{color:var(--tinta);}
+  .relato{background:#fafbfc;border:1px solid var(--linea);border-left:4px solid var(--rojo);
+    border-radius:8px;padding:14px 16px;font-size:14px;margin:4px 0;}
+  ul.bienes{margin:6px 0 0;padding-left:18px;font-size:14px;}
+  ul.bienes li{margin-bottom:5px;}
+  .money{width:100%;border-collapse:collapse;font-size:14px;margin-top:4px;}
+  .money th{text-align:left;background:#fafbfc;color:var(--gris);font-size:12px;text-transform:uppercase;
+    letter-spacing:.3px;padding:9px 10px;border-bottom:2px solid var(--linea);}
+  .money th.r,.money td.r{text-align:right;}
+  .money td{padding:9px 10px;border-bottom:1px solid var(--linea);}
+  .money tr.total td{font-weight:700;font-size:15px;border-top:2px solid var(--tinta);border-bottom:none;background:#fafbfc;}
+  .hint{font-size:12px;color:var(--gris);font-style:italic;}
+  .badge{display:inline-block;background:var(--okbg);color:var(--ok);font-size:12px;font-weight:700;
+    padding:3px 10px;border-radius:20px;margin-left:auto;text-transform:none;letter-spacing:0;}
+  .tips{background:var(--warnbg);border:1px solid #f0d9a8;border-radius:12px;padding:16px 20px;margin-bottom:16px;}
+  .tips h2{color:var(--warn);border:none;padding:0;margin:0 0 10px;}
+  .tips ul{margin:0;padding-left:18px;font-size:14px;}
+  .tips li{margin-bottom:7px;}
+  .foot{text-align:center;color:var(--gris);font-size:12px;margin-top:24px;}
+  .sign{display:flex;justify-content:space-between;gap:30px;margin-top:26px;flex-wrap:wrap;}
+  .sign div{flex:1;min-width:200px;text-align:center;}
+  .sign .line{border-top:1px solid var(--tinta);margin-top:40px;padding-top:6px;font-size:13px;color:var(--gris);}
+  @media print{
+    body{background:#fff;}
+    .wrap{max-width:100%;padding:0;}
+    .card,header,.tips{border:1px solid #ccc;break-inside:avoid;box-shadow:none;}
+    .no-print{display:none;}
+  }
+  .printbtn{display:inline-flex;align-items:center;gap:6px;background:var(--rojo);color:#fff;border:none;
+    padding:10px 18px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;margin-bottom:18px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <button class="printbtn no-print" onclick="window.print()">
+    <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9V2h12v7M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2M6 14h12v8H6z"/></svg>
+    Imprimir / Guardar como PDF
+  </button>
+
+  <header>
+    <div class="brand">
+      <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      Seguros Banorte — Declaración de Siniestro
+    </div>
+    <h1>Rotura accidental de tubería de agua caliente</h1>
+    <p class="sub">Datos armados para llenar el formato oficial "Declaración de Siniestro (Ramo Incendio)" y enviar al ajustador.</p>
+  </header>
+
+  <div class="card">
+    <h2>
+      <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>
+      Datos de la póliza y del siniestro
+      <span class="badge">Ajustador ya lo encaminó</span>
+    </h2>
+    <table>
+      <tr><td class="k">Fecha de la diligencia</td><td class="v">28 de agosto de 2026</td></tr>
+      <tr><td class="k">Cía. aseguradora</td><td class="v">Seguros Banorte, S.A. de C.V.</td></tr>
+      <tr><td class="k">No. de póliza</td><td class="v">CAHA-070-1003502</td></tr>
+      <tr><td class="k">Certificado</td><td class="v">90089563</td></tr>
+      <tr><td class="k">Producto</td><td class="v">CAHA — Hipoteca Fuerte Tradicional (Plan 10)</td></tr>
+      <tr><td class="k">Nombre del asegurado</td><td class="v">Jair Manuel Alonso García</td></tr>
+      <tr><td class="k">Nombre de quien declara</td><td class="v">Jair Manuel Alonso García</td></tr>
+      <tr><td class="k">En su carácter de</td><td class="v">Asegurado / propietario</td></tr>
+      <tr><td class="k">Teléfono</td><td class="v">55 2526 3060</td></tr>
+      <tr><td class="k">Correo electrónico</td><td class="v">cap.jair.garcia@gmail.com</td></tr>
+      <tr><td class="k">Ubicación del siniestro</td><td class="v">General San Martín 584, Int. 504, Col. Moderna, Guadalajara, Jalisco, CP 44190 (entre Niños Héroes y Mariano Otero)</td></tr>
+      <tr><td class="k">Fecha del siniestro</td><td class="v">27 de agosto de 2026</td></tr>
+      <tr><td class="k">Hora del siniestro</td><td class="v">Aprox. 20:40 hrs (8:40 PM)</td></tr>
+      <tr><td class="k">Fecha en que se enteró</td><td class="v">27 de agosto de 2026 (mismo día)</td></tr>
+      <tr><td class="k">Cómo se enteró</td><td class="v">Presenció la fuga; el agua comenzó a salir a presión</td></tr>
+      <tr><td class="k">Fecha de aviso a la aseguradora</td><td class="v">27 de agosto de 2026 (mismo día)</td></tr>
+      <tr><td class="k">Autoridad que intervino</td><td class="v">Ninguna</td></tr>
+      <tr><td class="k">Giro</td><td class="v">Casa habitación (uso residencial)</td></tr>
+      <tr><td class="k">Causa del siniestro</td><td class="v">Rotura accidental de tubería de agua caliente (tramo hacia la pared, no el flexible/manguera)</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h2>
+      <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h4l3 8 4-16 3 8h4"/></svg>
+      Detalle del siniestro (relato)
+    </h2>
+    <div class="relato">
+      El 27 de agosto de 2026, aproximadamente a las 20:40 hrs, se reventó de forma súbita y accidental
+      la tubería de agua caliente que conecta hacia la pared en la zona del lavabo. El agua comenzó a
+      salir a presión. Debido a que el departamento no cuenta con llave de paso general de agua fría,
+      cerré la llave del boiler para contener la fuga. El agua alcanzó a extenderse hasta el área de la
+      cocina. Ante la imposibilidad de quedarme sin suministro de agua, la tubería fue reparada de
+      emergencia; conservo fotografías tomadas antes de la reparación. Para reparar la tubería fue
+      necesario abrir el muro, por lo que se requiere resane y pintura de la pared afectada.
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>
+      <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 7 12 3 4 7v10l8 4 8-4z"/><path d="M12 3v18"/></svg>
+      Bienes afectados (dañados)
+    </h2>
+    <ul class="bienes">
+      <li>Mueble de madera/melamina bajo el lavabo — puerta deshinchada e hinchazón en costados y esquinas inferiores por el agua.</li>
+      <li>Zócalo (rodapié de madera pegado a los muros) — despegado del muro y con la unión abierta por humedad.</li>
+      <li>Muro — abierto para reparar la tubería; requiere resane, aplanado y pintura.</li>
+      <li>Área de piso alcanzada por el agua (extensión hacia la cocina).</li>
+    </ul>
+    <p class="hint" style="margin-top:10px;">Adjuntar las fotografías tomadas antes de la reparación (llave de paso, tubería, piso mojado, puerta del mueble deshinchada, zócalo despegado).</p>
+  </div>
+
+  <div class="card">
+    <h2>
+      <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+      Importe reclamado a la aseguradora (estimado)
+    </h2>
+    <table class="money">
+      <thead>
+        <tr><th>Partida</th><th class="r">Importe (MXN)</th></tr>
+      </thead>
+      <thead>
+        <tr><th>Partida</th><th class="r">Cant.</th><th class="r">P. unit.</th><th class="r">Importe (MXN)</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Reparación de tubería de agua caliente (termofusión: tubo 20&nbsp;mm, coples, mano de obra de emergencia)</td><td class="r">1</td><td class="r">$3,000</td><td class="r">$3,000.00</td></tr>
+        <tr><td>Apertura, resane y aplanado del muro afectado</td><td class="r">1 m²</td><td class="r">$1,500</td><td class="r">$1,500.00</td></tr>
+        <tr><td>Pintura del muro (impermeabilizante + acabado, área afectada)</td><td class="r">1</td><td class="r">$1,800</td><td class="r">$1,800.00</td></tr>
+        <tr><td>Reposición de puerta de mueble bajo lavabo (madera/melamina deshinchada)</td><td class="r">1</td><td class="r">$2,800</td><td class="r">$2,800.00</td></tr>
+        <tr><td>Reparación de costados / esquinas del mueble hinchadas por agua</td><td class="r">1</td><td class="r">$1,500</td><td class="r">$1,500.00</td></tr>
+        <tr><td>Reposición de zócalo de madera despegado del muro (rodapié)</td><td class="r">4 ml</td><td class="r">$350</td><td class="r">$1,400.00</td></tr>
+        <tr><td>Limpieza, secado y mano de obra general</td><td class="r">1</td><td class="r">$1,000</td><td class="r">$1,000.00</td></tr>
+        <tr class="total"><td colspan="3">Total reclamado (estimado)</td><td class="r">$13,000.00</td></tr>
+      </tbody>
+    </table>
+    <p class="hint" style="margin-top:10px;">Estimado con precios de referencia de mano de obra y material en Guadalajara (ago-2026), a partir de las fotografías del daño. Ajusta cada partida con las cotizaciones reales del proveedor que contrates. El costo de la reparación de tubería (~$3,000) el ajustador indicó que sí puede incluirse. Este monto está muy por debajo de tus sumas aseguradas (Contenidos $1,450,628 / Edificio $3,626,571), así que no hay problema de tope.</p>
+  </div>
+
+  <div class="tips">
+    <h2>
+      <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 9v4M12 17h.01"/><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/></svg>
+      Recordatorios antes de enviar
+    </h2>
+    <ul>
+      <li>Mantén la <strong>misma versión</strong> que diste por teléfono: rotura accidental de tubería de agua caliente, contuviste cerrando el boiler, reparaste de emergencia.</li>
+      <li>Envía las <strong>fotos previas a la reparación</strong> por WhatsApp junto con esta declaración.</li>
+      <li>Guarda el <strong>ticket/factura de la termofusora y material</strong> como comprobante del gasto de reparación.</li>
+      <li>El ajustador dijo que <strong>no mandan reparador</strong>: tú reparas con quien confíes y la compañía reembolsa/paga contra la documentación.</li>
+      <li>La póliza cubre esto sin deducible bajo <strong>Todo Riesgo de Edificio y Contenidos</strong> (punto 7: rotura accidental de tuberías de agua).</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <div class="sign">
+      <div><div class="line">Nombre completo del asegurado<br>Jair Manuel Alonso García</div></div>
+      <div><div class="line">Firma</div></div>
+    </div>
+    <p style="text-align:center;color:var(--gris);font-size:13px;margin-top:18px;">Fecha: 28 de agosto de 2026</p>
+  </div>
+
+  <p class="foot">
+    Documento de apoyo para llenar el formato oficial de Banorte. Teléfono de siniestros: 800 002 8888 · Atención al cliente: 800 500 2500.
+  </p>
+
+</div>
+</body>
+</html>
